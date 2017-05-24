@@ -1,0 +1,6 @@
+﻿@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Sitecore.Feature.Identity.Models.Identity>
+
+<a href="http://www.creowntech.com/" title="Creown Technologies">
+    @RenderImage(Model, x => x.Logo, new { @class = "mk-desktop-logo" }, isEditable: true)
+    @RenderImage(Model, x => x.Logo, new { @class = "mk-resposnive-logo" }, isEditable: true)
+</a>

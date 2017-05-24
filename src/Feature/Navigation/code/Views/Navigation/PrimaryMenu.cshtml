@@ -1,0 +1,28 @@
+﻿@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Sitecore.Feature.Navigation.Models.HomeItem>
+
+<nav id="mk-main-navigation" class="main_menu">
+    <ul id="menu-main-navigation" class="main-navigation-ul">
+        <li id="menu-item-6946" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-6943 current_page_item"><a href="@Model.Url">@Editable(Model, m => m.NavigationTitle)</a></li>
+        @foreach (var menu in Model.MenuItems)
+        {
+            if (menu.ShowInNavigation)
+            {
+                <li id="menu-item-6927" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
+                    <a href="@menu.Url">@Editable(menu, m => m.NavigationTitle)</a>
+                    @if (menu.ShowChildren)
+                    {
+                        <ul class="sub-menu ">
+                            <li id="menu-item-7113" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.creowntech.com/who-we-are/">Who we are</a></li>
+                            <li id="menu-item-7110" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.creowntech.com/our-mission-and-values-2/">Our Vision, Mission and Values</a></li>
+                            <li id="menu-item-7112" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.creowntech.com/our-mission-and-values/">What we do</a></li>
+                            <li id="menu-item-7111" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.creowntech.com/how-are-we-different/">How are we different?</a></li>
+                            <li id="menu-item-7337" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.creowntech.com/our-value-proposition/">Our Value Proposition</a></li>
+                        </ul>
+                    }
+                </li>
+            }
+        }
+    </ul>
+</nav>
+
+

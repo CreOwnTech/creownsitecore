@@ -1,0 +1,9 @@
+﻿@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Sitecore.Feature.Identity.Models.Identity>
+
+<span class="header-toolbar-contact">
+    <i class="mk-moon-phone-3"></i>@Editable(Model, m => m.OrganisationPhone)
+</span>
+<span class="header-toolbar-contact">
+    <i class="mk-moon-envelop"></i>
+    @RenderLink(Model, link => link.OrganisationEmail, null, true)
+</span>
