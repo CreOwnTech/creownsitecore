@@ -1,1 +1,22 @@
-﻿
+﻿@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Sitecore.Feature.Media.Models.Carousel>
+<div class="mk-edge-slider swiper-container" data-height="700" data-fullHeight="true" data-pause="15000" data-speed="600">
+    <div style="height:700px" class="edge-slider-holder swiper-wrapper">
+
+        @foreach (var item in Model.Images)
+        {
+            <div class="swiper-slide mk-video-holder left_center" style="background-image:url(@item.Image.Src); background-color:">
+                <div class="mk-grid">
+                    <div class="edge-slide-content caption-light" style="width:60%">
+                        <h3>@Editable(item, m => m.Title)</h3>
+                        @Editable(item, m => m.Description)
+                        <div class="mk-edge-custom-content">
+                            <div class='mailmunch-forms-before-post' style='display: none !important;'></div><div class='mailmunch-forms-in-post-middle' style='display: none !important;'></div><div class='mailmunch-forms-after-post' style='display: none !important;'></div>
+                        </div>
+                    </div><!--/edge-slide-content-->
+                </div><!--/mk-grid-->
+            </div>
+        }
+        <!--/edge-slide-content-->
+    </div><!--/mk-grid-->
+</div><!--/edge-slide-->
+<div class="edge-skip-slider"><i class="mk-jupiter-icon-arrow-down"></i></div><a class="mk-edge-prev"><i class="mk-moon-arrow-left"></i></a><a class="mk-edge-next"><i class="mk-moon-arrow-right-2"></i></a><div class="edge-slider-loading"></div>
